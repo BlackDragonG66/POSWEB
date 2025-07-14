@@ -6,12 +6,16 @@ Sistema de Punto de Venta (POS) Web desarrollado en PHP y MySQL, ideal para pequ
 
 - **Gestión de usuarios:** Alta, baja, cambio de contraseña, activar/desactivar usuarios.
 - **Gestión de productos:** Registro, edición, carga de imagen, código de barras.
-- **Ventas:** Carrito, control de stock, cobro, cálculo de cambio, validaciones.
+- **Ventas:** Carrito, control de stock, cobro, cálculo de cambio, validaciones, generación de ticket PDF tipo recibo.
 - **Inventario:** Listado editable, exportación e importación CSV, impresión PDF, actualización de imágenes.
 - **Reportes:** Filtros por fecha y usuario, reporte diario, exportación a PDF y CSV.
 - **Control de acceso:** Solo usuarios activos pueden iniciar sesión.
 - **Modo oscuro global:** Botón destacado, persistencia de preferencia.
 - **Interfaz moderna:** Bootstrap 5, tablas y tarjetas responsivas.
+- **Configuración de ticket:** Edita nombre de tienda, dirección y logo desde el sistema.
+- **Ticket PDF personalizable:** Muestra nombre de tienda, dirección, logo, fecha/hora, productos, total, medio de pago, cambio, mensaje personalizado, "POS Web" y GitHub.
+- **Mejoras visuales y validaciones:** Tablas, botones, advertencias y mensajes claros.
+- **Flujo Git:** Inicialización, commits, push, manejo de ramas, restauración y sincronización con GitHub.
 
 ## Instalación
 
@@ -40,6 +44,10 @@ Sistema de Punto de Venta (POS) Web desarrollado en PHP y MySQL, ideal para pequ
 ## Actualización de imágenes
 - Desde el inventario, haz clic en "Actualizar Imagen" para abrir un modal, ver la imagen actual y subir una nueva.
 
+## Configuración de ticket
+- Edita el nombre de la tienda, dirección y logo desde el menú de configuración.
+- El ticket PDF muestra estos datos, además de mensajes personalizados, "POS Web" y el enlace de GitHub.
+
 ## Seguridad
 - Las contraseñas se almacenan con MD5 (recomendado cambiar a un hash más seguro en producción).
 - Todas las acciones importantes requieren sesión activa.
@@ -52,7 +60,7 @@ Sistema de Punto de Venta (POS) Web desarrollado en PHP y MySQL, ideal para pequ
 
 ## Notas
 - Desarrollado por diversion.
-- Inspirado en perder unas partidas de Elden Ring (Nightreign).
+- Inspirado en perder unas partidas de Elden Ring Nightreign.
 - Si te funcionó, puedes regalarme una estrella aquí o, si quieres, invítame un café: https://paypal.me/elblackyg66
 
 ---
