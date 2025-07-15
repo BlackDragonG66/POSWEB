@@ -44,3 +44,11 @@ CREATE TABLE IF NOT EXISTS detalle_ventas (
     FOREIGN KEY (venta_id) REFERENCES ventas(id),
     FOREIGN KEY (producto_id) REFERENCES productos(id)
 );
+
+-- Tabla de configuración del ticket
+CREATE TABLE IF NOT EXISTS configuracion (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre_tienda VARCHAR(100) NOT NULL,
+    direccion_local VARCHAR(255) NOT NULL,
+    logo_negocio VARCHAR(255)
+);

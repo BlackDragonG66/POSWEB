@@ -97,6 +97,15 @@ if (isset($_POST['cobrar']) && !empty($_SESSION['carrito'])) {
                 $conn->commit();
                 $mensaje = 'Venta registrada correctamente.';
                 $_SESSION['carrito'] = [];
+                // Generar PDF tipo ticket y abrirlo
+                $_SESSION['ticket_pdf'] = [
+                    'venta_id' => $venta_id,
+                    'total' => $total,
+                    'medio_pago' => $medio_pago,
+                    'dinero_recibido' => $dinero_recibido,
+                    'cambio' => $cambio
+                ];
+                echo '<script>window.open("ticket.php", "_blank");</script>';
             } else {
                 $conn->rollback();
                 $mensaje = 'Error al registrar la venta.';

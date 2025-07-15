@@ -65,6 +65,7 @@ if (!isset($_SESSION['usuario'])) {
                             <a href="inventario.php" class="btn btn-outline-warning">Inventario</a>
                             <a href="registro.php" class="btn btn-outline-secondary">Registrar Usuario</a>
                             <a href="gestionar_usuarios.php" class="btn btn-outline-dark" id="btnGestionarUsuarios">Gestionar Usuarios</a>
+                            <a href="configuracion_ticket.php" class="btn btn-outline-info">Configurar Ticket</a>
                             <a href="logout.php" class="btn btn-danger">Cerrar Sesión</a>
                         </div>
                     </div>
