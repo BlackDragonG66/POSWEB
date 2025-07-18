@@ -42,8 +42,36 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Configuración del Ticket</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+    body.dark-mode { background-color: #181a1b !important; color: #f1f1f1 !important; }
+    .card.dark-mode { background-color: #23272b !important; color: #f1f1f1 !important; }
+    .btn-darkmode { position: fixed; top: 10px; right: 10px; z-index: 9999; }
+    label.dark-mode, .form-label.dark-mode { color: #f1f1f1 !important; }
+    input.dark-mode, .form-control.dark-mode { background-color: #23272b !important; color: #f1f1f1 !important; border-color: #444 !important; }
+    </style>
 </head>
-<body class="bg-light">
+<body class="bg-light" id="body">
+    <button class="btn btn-warning btn-darkmode" onclick="toggleDarkMode()" id="darkBtn">🌙</button>
+    <script>
+    function toggleDarkMode() {
+        document.body.classList.toggle('dark-mode');
+        document.querySelectorAll('.card').forEach(c=>c.classList.toggle('dark-mode'));
+        document.querySelectorAll('label, .form-label').forEach(l=>l.classList.toggle('dark-mode'));
+        document.querySelectorAll('input, .form-control').forEach(i=>i.classList.toggle('dark-mode'));
+        let dark = document.body.classList.contains('dark-mode');
+        localStorage.setItem('darkmode', dark ? '1' : '0');
+        document.getElementById('darkBtn').innerText = dark ? '☀️' : '🌙';
+    }
+    window.onload = function() {
+        if(localStorage.getItem('darkmode')==='1') {
+            document.body.classList.add('dark-mode');
+            document.querySelectorAll('.card').forEach(c=>c.classList.add('dark-mode'));
+            document.querySelectorAll('label, .form-label').forEach(l=>l.classList.add('dark-mode'));
+            document.querySelectorAll('input, .form-control').forEach(i=>i.classList.add('dark-mode'));
+            document.getElementById('darkBtn').innerText = '☀️';
+        }
+    }
+    </script>
     <div class="container mt-5">
         <div class="row justify-content-center">
             <div class="col-md-6">
